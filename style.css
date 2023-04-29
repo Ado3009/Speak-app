@@ -12,16 +12,11 @@ body {
 .main-wrapper {
   display: grid;
   place-items: center;
-  margin: 10px;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
 }
 
 button {
   margin-top: 30px;
-  width: 50%;
+  width: 300px;
   height: 70px;
   font-family: Sigmar, sans-serif;
   text-transform: uppercase;
@@ -36,6 +31,8 @@ textarea {
   resize: none;
   padding: 30px;
   font-size: 20px;
+  height: 300px;
+  width: 300px;
 }
 
 textarea:focus {
@@ -80,5 +77,30 @@ a {
   }
   to {
     margin-right: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  @keyframes slidein {
+    from {
+      margin-top: 100%;
+    }
+    to {
+      margin-bottom: 30%;
+    }
+  }
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    z-index: -20;
+    background-color: #3f4b83;
+    animation: 3s infinite alternate slidein;
   }
 }
